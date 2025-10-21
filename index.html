@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Maafku ❤️</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #FCE4EC; /* Warna pink muda yang lembut */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            color: #4A148C; /* Warna ungu tua untuk teks */
+        }
+        .container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+        h1 {
+            color: #E91E63; /* Warna merah muda cerah */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .cute-emoji {
+            font-size: 3em;
+            display: block;
+            margin: 20px 0;
+            animation: pulse 1.5s infinite; /* Efek berdenyut */
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column; /* Tombol diletakkan vertikal */
+            gap: 15px; /* Jarak antar tombol */
+            margin-top: 20px;
+        }
+        .btn-yes, .btn-no {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .btn-yes {
+            background-color: #FF7043; /* Warna oranye manis untuk Ya */
+            color: white;
+        }
+        .btn-yes:hover {
+            background-color: #FF5722;
+            transform: scale(1.05);
+        }
+        .btn-no {
+            background-color: #9C27B0; /* Warna ungu gelap untuk Belum/Tidak */
+            color: white;
+        }
+        .btn-no:hover {
+            background-color: #7B1FA2;
+            transform: scale(1.05);
+        }
+        .btn-yes:active, .btn-no:active {
+            transform: scale(0.98);
+        }
+
+        /* Animasi berdenyut */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="main-title">Maaf, Sayangku 🥺</h1>
+        <span class="cute-emoji" id="main-emoji">😔</span>
+        <p id="main-message">Aku tahu aku salah. Aku minta maaf banget ya. Jangan ngambek lama-lama, nanti cantiknya hilang lho. Aku janji akan lebih baik lagi.</p>
+        <p>Tersenyum dikit dong... 😊</p>
+
+        <div class="button-group">
+            <button class="btn-yes" onclick="baikanYuk()">
+                Iya deh, aku maafin 😊
+            </button>
+            <button class="btn-no" onclick="belumMauBaikan()">
+                Belum! Aku masih ngambek 😠
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function baikanYuk() {
+            // Mengubah tampilan ketika dia mau baikan
+            document.getElementById('main-title').textContent = "Yeay! Makasih Sayang! 🥰";
+            document.getElementById('main-emoji').textContent = "💖";
+            document.getElementById('main-message').innerHTML = "Kamu memang yang terbaik! Senyummu itu lho, bikin aku makin sayang. *peluk online* 🤗";
+            
+            // Menghilangkan tombol setelah diklik
+            document.querySelector('.button-group').style.display = 'none';
+
+            // Menampilkan notifikasi pop-up
+            alert("Senang banget kamu mau maafin! Love you! ❤️");
+        }
+
+        function belumMauBaikan() {
+            // Mengubah tampilan ketika dia masih ngambek
+            document.getElementById('main-title').textContent = "Aduh, Jangan Dong 😭";
+            document.getElementById('main-emoji').textContent = "😩";
+            document.getElementById('main-message').innerHTML = "Jangan hukum aku lama-lama. Aku janji bakal traktir kamu es krim favoritmu! Ya? *mohon-mohon* 🙏";
+            
+            // Mengganti teks tombol yang "belum mau"
+            document.querySelector('.btn-no').textContent = "Hmmm, Oke deh... (Klik Aku)";
+            document.querySelector('.btn-no').onclick = baikanYuk; // Mengarahkan tombol "belum mau" ke fungsi baikanYuk
+            
+            // Mengubah tombol "iya" menjadi lebih menarik
+            document.querySelector('.btn-yes').textContent = "AYO BAIKAN SEKARANG! 😇";
+            
+            // Menampilkan notifikasi pop-up
+            alert("Okelah, ini bujukan ekstra dariku! Coba lihat pesannya lagi 👆");
+        }
+    </script>
+
+</body>
+</html>
